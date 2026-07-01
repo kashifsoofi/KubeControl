@@ -14,6 +14,11 @@
   </Design.DataContext>
   
   <StackPanel>
-    <ComboBox ItemsSource="{Binding Contexts}"></ComboBox>
+    <StackPanel Orientation="Horizontal" Margin="4" Spacing="4">
+      <ComboBox ItemsSource="{Binding Contexts}"
+                SelectedItem="{Binding CurrentContext}"
+                PlaceholderText="Please select context"></ComboBox>
+      <Button Command="{Binding SetContextCommand}">Set Context</Button>
+    </StackPanel>
   </StackPanel>
 </UserControl>
